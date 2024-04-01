@@ -15,6 +15,9 @@
 .bg--primary {
   background-color: var(--primary-color) !important;
 }
+.text--primary {
+  color: var(--primary-color) !important;
+}
 .bg--light {
   background-color: var(--light-color) !important;
 }
@@ -66,6 +69,15 @@ h2 {
   -webkit-transform: rotate(-35deg);
   transform: rotate(-35deg);
   width: 80px;
+}
+.brand img {
+  -ms-transform-origin: left top;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  -moz-transition: all 150ms ease 150ms;
+  -o-transition: all 150ms ease 150ms;
+  -webkit-transition: all 150ms ease 150ms;
+  transition: all 150ms ease 150ms;
 }
 .form-label {
   color: #4f8f23;
@@ -210,11 +222,8 @@ h2 {
 .scrolled {
   font-size: 1.3rem !important;
 }
-.scrolled .brand img {
-  -ms-transform: scale(0.88);
-  -o-transform: scale(0.88);
-  -webkit-transform: scale(0.88);
-  transform: scale(0.88);
+.scrolled .img-fluid {
+  transform: scale(0.88) !important;
 }
 @media (min-width: 576px) {
   .form-button {
