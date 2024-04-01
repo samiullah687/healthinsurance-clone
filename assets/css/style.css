@@ -36,6 +36,10 @@ h6 {
   margin: 0;
   color: #282c52;
 }
+.h2,
+h2 {
+  font-size: calc(1.325rem + 0.9vw);
+}
 .bg-form {
   background-color: #ddebd4 !important;
 }
@@ -91,10 +95,20 @@ h6 {
 .form-control,
 .form-select,
 .form-label-button {
-  border: 1px solid #528f25;
+  border: 1px solid #528f25 !important;
   font-weight: 500;
   height: 2.5rem;
   padding: 0.3rem;
+  background-color: #fff;
+  color: #528f25;
+}
+
+/* #gender-female-button, */
+#household-plus,
+.input-group-append button,
+.btn-check:checked + .btn {
+  background-color: #528f25 !important;
+  color: #fff !important;
 }
 .form-label-button {
   font-size: 1.2rem;
@@ -126,11 +140,16 @@ h6 {
   white-space: nowrap;
   width: 100%;
 }
-@media (min-width: 576px) {
-  .form-button {
-    width: auto;
-  }
+.btn-check:checked + .btn-secondary,
+.btn-check:active + .btn-secondary,
+.btn-secondary:active,
+.btn-secondary.active,
+.show > .btn-secondary.dropdown-toggle {
+  background-color: #57901f !important;
+  border-color: #57901f !important;
+  color: #fff;
 }
+
 @media (min-width: 768px) {
   .form-control,
   .form-select {
@@ -143,9 +162,12 @@ h6 {
   font-weight: 700 !important;
   margin: 5px 0;
 }
+.agent-phone {
+  font-size: 2rem;
+}
 #agent-phone-number {
   color: var(--secondary-color);
-  font-size: 2rem;
+
   font-weight: 700;
   line-height: 1.2;
   -ms-transform-origin: left top;
@@ -185,17 +207,43 @@ h6 {
   font-weight: 600;
   font-size: 15px;
 }
+
+@media (min-width: 576px) {
+  .form-button {
+    width: auto;
+  }
+  .scrolled .brand {
+    transform: scale(0.88) !important;
+  }
+  .agent-phone .scrolled {
+    font-size: 1.3rem !important;
+  }
+}
 @media (min-width: 768px) {
   main {
     padding-right: 50px !important;
   }
+  aside h2 {
+    font-size: 1.4rem;
+  }
 }
 @media (max-width: 780px) {
+  section[role="document"] {
+    margin-top: 80px;
+  }
+  .d-scrolled-block {
+    display: block !important;
+  }
+
+  .d-scrolled-none {
+    display: none !important;
+  }
 }
 
 @media (min-width: 576px) {
   section[role="document"] {
     padding: 1rem 0;
+    margin-top: 80px;
   }
 }
 @media (min-width: 768px) {

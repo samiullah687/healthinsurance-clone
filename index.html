@@ -52,9 +52,9 @@
 
   <body>
     <!-- Header section -->
-    <header id="top" class="navbar p-0 bg-white border-bottom">
+    <header id="top" class="navbar fixed-top p-0 bg-white border-bottom">
       <div id="header-mobile" class="d-sm-none w-100">
-        <div class="d-scrolled-none container py-2">
+        <div class="container py-2">
           <img
             src="./assets/img/logo/h1-logo.svg"
             width="1000"
@@ -63,10 +63,9 @@
             alt="Health1nsurance"
           />
         </div>
-        <div
-          class="d-none d-scrolled-block w-100 bg--primary pb-2 text-white text-center"
-        >
-          <a class="agent-phone-uri" href="tel:+18885925448">
+
+        <div class="d-none w-100 bg--primary pb-2 text-white text-center">
+          <a class="agent-phone-uri text-white" href="tel:+18885925448">
             <div>Get Help Comparing Plans</div>
           </a>
           <div>
@@ -283,7 +282,7 @@
                               <label
                                 id="gender-male-button"
                                 for="gender-male"
-                                class="form-label-button btn btn-secondary w-100"
+                                class="form-label-button btn btn--secondary w-100"
                                 >Male</label
                               >
                             </div>
@@ -299,7 +298,7 @@
                               <label
                                 id="gender-female-button"
                                 for="gender-female"
-                                class="form-label-button btn btn-secondary w-100"
+                                class="form-label-button btn btn--secondary w-100"
                                 >Female</label
                               >
                             </div>
@@ -331,7 +330,7 @@
                             />
                             <span class="input-group-append">
                               <button
-                                class="btn btn-secondary bi bi-calendar"
+                                class="btn btn--secondary bi bi-calendar"
                                 type="button"
                               ></button>
                             </span>
@@ -364,6 +363,7 @@
                               name="householdSize"
                               type="text"
                               class="form-control text-center"
+                              value="1"
                               min="1"
                               max="8"
                             />
@@ -710,7 +710,7 @@
                   </noscript>
                 </section>
 
-                <article class="bg-light bg-border pt-0 text-center">
+                <article class="bg--light bg-border pt-0 text-center">
                   <div class="d-flex justify-content-center">
                     <i class="bi bi-quote fs-1 text-white bg--secondary"></i>
                   </div>
@@ -1077,6 +1077,97 @@
           autoclose: true,
           orientation: "bottom auto",
         });
+      });
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          var scrollPosition = $(this).scrollTop();
+
+          // Add or remove the 'scrolled' class based on scroll position
+          if (scrollPosition > 130) {
+            $("#agent-phone-number").addClass("scrolled");
+            $(".brand img").addClass("scrolled");
+          } else {
+            $("#agent-phone-number").removeClass("scrolled");
+            $(".brand img").removeClass("scrolled");
+          }
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        window.addEventListener("scroll", function () {
+          var scrollPosition =
+            window.scrollY || document.documentElement.scrollTop;
+
+          // Select the elements for desktop
+          var phoneNumber = document.getElementById("agent-phone-number");
+          var brandImage = document.querySelector(".brand img");
+
+          // Select the mobile elements
+          var headerMobileFirst = document.querySelector(
+            "#header-mobile > div:first-child"
+          );
+          var headerMobileSecond = document.querySelector(
+            "#header-mobile > div:nth-child(2)"
+          );
+
+          // Toggle classes based on scroll position for desktop
+          if (scrollPosition > 130) {
+            phoneNumber.classList.add("scrolled");
+            brandImage.classList.add("scrolled");
+          } else {
+            phoneNumber.classList.remove("scrolled");
+            brandImage.classList.remove("scrolled");
+          }
+
+          // Toggle classes based on scroll position for mobile
+          if (scrollPosition > 130) {
+            if (headerMobileFirst)
+              headerMobileFirst.classList.add("d-scrolled-none");
+            if (headerMobileSecond)
+              headerMobileSecond.classList.remove("d-none");
+            if (headerMobileSecond)
+              headerMobileSecond.classList.add("d-scrolled-block");
+          } else {
+            if (headerMobileFirst)
+              headerMobileFirst.classList.remove("d-scrolled-none");
+            if (headerMobileSecond) headerMobileSecond.classList.add("d-none");
+            if (headerMobileSecond)
+              headerMobileSecond.classList.remove("d-scrolled-block");
+          }
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var minusButton = document.getElementById("household-minus");
+        var plusButton = document.getElementById("household-plus");
+        var input = document.getElementById("household_size");
+
+        minusButton.addEventListener("click", function () {
+          var currentValue = parseInt(input.value, 10);
+          if (currentValue > 1) {
+            input.value = currentValue - 1;
+          }
+          toggleDisable();
+        });
+
+        plusButton.addEventListener("click", function () {
+          var currentValue = parseInt(input.value, 10);
+          var maxValue = parseInt(input.getAttribute("max"), 10);
+          if (currentValue < maxValue) {
+            input.value = currentValue + 1;
+          }
+          toggleDisable();
+        });
+
+        function toggleDisable() {
+          var currentValue = parseInt(input.value, 10);
+          var minValue = parseInt(input.getAttribute("min"), 10);
+          var maxValue = parseInt(input.getAttribute("max"), 10);
+          minusButton.disabled = currentValue <= minValue;
+          plusButton.disabled = currentValue >= maxValue;
+        }
       });
     </script>
   </body>
