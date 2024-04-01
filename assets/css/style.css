@@ -1,5 +1,7 @@
 /* style.css */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
 :root {
   --primary-color: rgb(133, 194, 54);
   --secondary-color: rgb(38, 135, 191);
@@ -16,11 +18,23 @@
 .bg--light {
   background-color: var(--light-color) !important;
 }
+
 body {
   font-family: "Open Sans", sans-serif, Arial, sans-serif;
   margin: 0;
   padding: 0;
   background: #fff;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  margin: 0;
+  color: #282c52;
 }
 .bg-form {
   background-color: #ddebd4 !important;
@@ -156,6 +170,20 @@ body {
   /* margin-top: 60px; */
   padding-left: 24px;
   padding-right: 24px;
+}
+.main-footer p {
+  font-size: 13px;
+  line-height: 1.4;
+}
+.footer-links {
+  padding-top: 20px;
+  text-align: center;
+}
+.footer-links a {
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 15px;
 }
 @media (min-width: 768px) {
   main {
