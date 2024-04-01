@@ -207,16 +207,21 @@ h2 {
   font-weight: 600;
   font-size: 15px;
 }
-
+.scrolled {
+  font-size: 1.3rem !important;
+}
+.scrolled .brand img {
+  -ms-transform: scale(0.88);
+  -o-transform: scale(0.88);
+  -webkit-transform: scale(0.88);
+  transform: scale(0.88);
+}
 @media (min-width: 576px) {
   .form-button {
     width: auto;
   }
   .scrolled .brand {
     transform: scale(0.88) !important;
-  }
-  .agent-phone .scrolled {
-    font-size: 1.3rem !important;
   }
 }
 @media (min-width: 768px) {
