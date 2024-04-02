@@ -387,9 +387,9 @@
                             >
                             <i
                               class="bi bi-info-circle-fill"
-                              aria-hidden="true"
-                              aria-label="Used to determine your eligibility for income based subsidies."
-                              data-bs-original-title="Used to determine your eligibility for income based subsidies."
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="top"
+                              title="Used to determine your eligibility for income based subsidies."
                             ></i>
                           </label>
                         </div>
@@ -419,8 +419,9 @@
                             >Qualifying Event
                             <i
                               class="bi bi-info-circle-fill"
-                              aria-label="During periods of time outside of annual open enrollment, you will need a qualifying life event (such as losing your coverage, moving, or getting married) to purchase an ACA Health Plan from the healthcare marketplace. But not to worry, even if you don't have a qualifying event, there are many coverage options that can carry you over until the next open enrollment period, and longer."
-                              data-bs-original-title="During periods of time outside of annual open enrollment, you will need a qualifying life event (such as losing your coverage, moving, or getting married) to purchase an ACA Health Plan from the healthcare marketplace. But not to worry, even if you don't have a qualifying event, there are many coverage options that can carry you over until the next open enrollment period, and longer."
+                              data-bs-toggle="tooltip"
+                              data-bs-html="true"
+                              title="During periods of time outside of annual open enrollment, you will need a qualifying life event (such as losing your coverage, moving, or getting married) to purchase an ACA Health Plan from the healthcare marketplace. But not to worry, even if you don't have a qualifying event, there are many coverage options that can carry you over until the next open enrollment period, and longer."
                             ></i>
                           </label>
                         </div>
@@ -1172,6 +1173,15 @@
           minusButton.disabled = currentValue <= minValue;
           plusButton.disabled = currentValue >= maxValue;
         }
+      });
+      // Initialize all tooltips on the page
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl, {
+          boundary: document.body,
+        });
       });
     </script>
   </body>

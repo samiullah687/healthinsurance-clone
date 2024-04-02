@@ -268,10 +268,6 @@ a {
   .scrolled .brand {
     transform: scale(0.88) !important;
   }
-  section[role="document"] {
-    padding: 1rem 0;
-    margin-top: 80px;
-  }
 }
 @media (min-width: 768px) {
   main {
@@ -280,10 +276,14 @@ a {
   aside h2 {
     font-size: 1.4rem;
   }
+  section[role="document"] {
+    padding: 1rem 0;
+    margin-top: 100px;
+  }
 }
 @media (max-width: 780px) {
   section[role="document"] {
-    margin-top: 80px;
+    margin-top: 60px;
   }
   .d-scrolled-block {
     display: block !important;
@@ -296,19 +296,54 @@ a {
     padding: 1.5rem 0;
   }
 }
-.flex-form-row {
-  display: flex;
-  align-items: center; /* Align items vertically */
-  justify-content: space-between; /* Space between label and input */
-  margin-bottom: 1rem; /* Margin for spacing between rows */
+.tooltip.bs-tooltip-top .tooltip-arrow {
+  border-top-color: #528f25;
 }
 
-.flex-form-label {
-  flex: 1; /* Label takes up 1 part of the flex container */
-  margin-right: 20px; /* Margin between label and input for spacing */
-  white-space: nowrap; /* Prevents the text from wrapping */
+.tooltip.bs-tooltip-top .tooltip-inner {
+  background-color: #528f25;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  padding: 0.5em 0.75em;
 }
 
-.flex-form-input {
-  flex: 3; /* Input takes up 3 parts of the flex container, making it larger than the label */
+/* Custom CSS for the positioning and arrow of the tooltip */
+.tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  margin: 0;
+  font-size: 12px;
+  line-height: 16px;
 }
+
+.tooltip .tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #000000ad;
+  border-radius: 0.25rem;
+}
+
+.tooltip .arrow:before {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+/* Tooltip on top */
+.tooltip.bs-tooltip-top .arrow {
+  bottom: 0;
+}
+
+.tooltip.bs-tooltip-top .arrow:before {
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #528f25;
+}
+
+/* Add more customization here if needed to match the exact design */
