@@ -115,7 +115,20 @@ a {
   height: 2.5rem;
   padding: 0.3rem;
   background-color: #fff;
+}
+.form-control,
+.form-select {
+  color: #000;
+}
+.form-label-button {
   color: #528f25;
+}
+.form-control::placeholder {
+  color: #b5b0b0 !important;
+}
+.form-control:focus {
+  border: 1px solid #528f25;
+  box-shadow: 0 0 0 0.25rem rgba(82, 143, 37, 0.25);
 }
 
 .bi-info-circle-fill {
@@ -123,12 +136,22 @@ a {
 }
 
 /* #gender-female-button, */
-#household-plus,
-.input-group-append button,
-.btn-check:checked + .btn {
+
+.input-group-append button:hover,
+.btn-check:checked + .btn,
+#household-minus:not(:disabled):hover,
+#household-plus:hover {
   background-color: #528f25 !important;
   color: #fff !important;
 }
+.input-group-append button,
+#household-plus,
+#household-minus:not(:disabled) {
+  border: 1px solid#528f25 !important;
+  background-color: #fff !important;
+  color: #528f25 !important;
+}
+
 .form-label-button {
   font-size: 1.2rem;
 }
@@ -245,6 +268,10 @@ a {
   .scrolled .brand {
     transform: scale(0.88) !important;
   }
+  section[role="document"] {
+    padding: 1rem 0;
+    margin-top: 80px;
+  }
 }
 @media (min-width: 768px) {
   main {
@@ -265,15 +292,6 @@ a {
   .d-scrolled-none {
     display: none !important;
   }
-}
-
-@media (min-width: 576px) {
-  section[role="document"] {
-    padding: 1rem 0;
-    margin-top: 80px;
-  }
-}
-@media (min-width: 768px) {
   section[role="document"] {
     padding: 1.5rem 0;
   }
