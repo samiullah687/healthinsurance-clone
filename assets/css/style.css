@@ -21,7 +21,12 @@
 .bg--light {
   background-color: var(--light-color) !important;
 }
-
+.text--secondary {
+  color: var(--secondary-color) !important;
+}
+section[role="document"] {
+  background-color: #fbfbfb;
+}
 body {
   font-family: "Open Sans", sans-serif, Arial, sans-serif;
   margin: 0;
