@@ -268,10 +268,11 @@ a {
   color: #b5b0b0 !important;
 }
 .form-control:focus {
-  border: 1px solid #cd496a;
+  border: 1px solid #cd496a !important;
   box-shadow: 0 0 0 0.25rem #cc4a6b2d;
 }
 .btn-secondary:focus {
+  border: 1px solid #cd496a !important;
   box-shadow: 0 0 0 0.2rem #cc4a6b2d !important;
 }
 

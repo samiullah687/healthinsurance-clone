@@ -1250,6 +1250,12 @@
           boundary: document.body,
         });
       });
+      $(document).ready(function () {
+        $(".bi-calendar").click(function () {
+          $("#dob").click();
+          $("#dob").focus();
+        });
+      });
     </script>
   </body>
 </html>
